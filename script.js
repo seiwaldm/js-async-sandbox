@@ -68,17 +68,15 @@ const counter = function(number) {
     });
 };
 
-// counter(5).then(
-//     () => counter(4).then(
-//         () => counter(3).then(
-//             () => counter(2).then(
-//                 () => counter(1).then(
-//                     () => counter(0)
-//                 )
-//             )
-//         )
-//     )
-// );
+
+// use return, or the next then won't wait....
+// counter(3).then(() => {
+//         return counter(2);
+//     }).then(() => {
+//         return counter(1);
+//     }).then(() => {
+//         return counter(0);
+//     });
 
 // PROMISE ALL !!!
 
