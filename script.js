@@ -97,3 +97,18 @@ const counter = function(number) {
 //     await counter(0);
 // }
 // counting();
+
+
+// TO ROUND UP:
+
+// function recursiveCountdown(number) {
+//     if (number >= 0) {
+//         setTimeout(() => {
+//             console.log(number);
+//             recursiveCountdown(number - 1);
+//         },
+//         1000);
+//     }
+// }
+
+// recursiveCountdown(6);
