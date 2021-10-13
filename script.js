@@ -63,20 +63,21 @@ function countDown() {
 const counter = function(number) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(console.log(number));
-        }, 1000);
+            console.log(number);
+            resolve();
+        }, 2000);
     });
 };
 
 
 // use return, or the next then won't wait....
-// counter(3).then(() => {
-//         return counter(2);
-//     }).then(() => {
-//         return counter(1);
-//     }).then(() => {
-//         return counter(0);
-//     });
+counter(3).then(() => {
+        return counter(2);
+    }).then(() => {
+        return counter(1);
+    }).then(() => {
+        return counter(0);
+    });
 
 // PROMISE ALL !!!
 
