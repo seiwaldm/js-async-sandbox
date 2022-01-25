@@ -11,7 +11,7 @@
 // OUR LITTLE FARM
 
 let farm = [
-"🐔", "🐷", "🐮"
+    "🐔", "🐷", "🐮"
 ];
 
 function showFarm() {
@@ -19,14 +19,14 @@ function showFarm() {
 }
 
 function addAnimal(animal) {
-    setTimeout(function() {
+    setTimeout(function () {
         farm.push(animal);
     }, 2000);
 }
 
-// showFarm();
-// addAnimal("🐴");
-// showFarm();
+showFarm();
+addAnimal("🐴");
+showFarm();
 
 
 // WELCOME TO COUNTDOWN CALLBACK HELL
@@ -42,8 +42,8 @@ function countDown() {
                         () => {
                             console.log(1);
                             setTimeout(() => {
-                                console.log(0);
-                                },
+                                console.log("💣");
+                            },
                                 1000
                             );
                         },
@@ -60,24 +60,24 @@ function countDown() {
 
 // PROMISES
 
-const counter = function(number) {
+function counter(number) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log(number);
             resolve();
-        }, 2000);
+        }, 1000);
     });
-};
+}
 
 
 // use return, or the next then won't wait....
 counter(3).then(() => {
-        return counter(2);
-    }).then(() => {
-        return counter(1);
-    }).then(() => {
-        return counter(0);
-    });
+    return counter(2);
+}).then(() => {
+    return counter(1);
+}).then(() => {
+    return counter("💣");
+});
 
 // PROMISE ALL !!!
 
@@ -87,13 +87,13 @@ counter(3).then(() => {
 
 // ASYNC / AWAIT
 
-// async function counting(){
+// async function counting() {
 //     await counter(5);
 //     await counter(4);
 //     await counter(3);
 //     await counter(2);
 //     await counter(1);
-//     await counter(0);
+//     await counter("💣");
 // }
 // counting();
 
